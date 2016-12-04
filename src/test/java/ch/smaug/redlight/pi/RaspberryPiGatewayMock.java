@@ -1,35 +1,71 @@
 package ch.smaug.redlight.pi;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.lang.reflect.InvocationTargetException;
+
 import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import ch.smaug.redlight.pi.RaspberryPiGateway;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 @ApplicationScoped
 @Alternative
 @Priority(10000)
-public class RaspberryPiGatewayMock  implements RaspberryPiGateway {
+public class RaspberryPiGatewayMock implements RaspberryPiGateway {
 
-	RaspberryPiGatewayMock() {
-		JFrame frame = new JFrame("HelloWorldSwing");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	private JFrame frame;
+	private Color color = Color.GRAY;
 
-		// Add the ubiquitous "Hello World" label.
-		JLabel label = new JLabel("Hello World");
-		frame.getContentPane().add(label);
-
-		// Display the window.
-		frame.pack();
-		frame.setVisible(true);
+	public RaspberryPiGatewayMock() {
+		try {
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					frame = new JFrame("red-light");
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame.add(new LightPanel());
+					frame.pack();
+					frame.setVisible(true);
+				}
+			});
+		} catch (InvocationTargetException | InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
 	public void setOutput(final boolean on) {
-		// TODO Auto-generated method stub
+		try {
+			SwingUtilities.invokeAndWait(new Runnable() {
+				@Override
+				public void run() {
+					color = on ? Color.YELLOW : Color.GRAY;
+					frame.repaint();
+				}
+			});
+		} catch (InvocationTargetException | InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
+	private class LightPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		public Dimension getPreferredSize() {
+			return new Dimension(100, 100);
+		}
+
+		@Override
+		public void paintComponent(final Graphics g) {
+			super.paintComponent(g);
+			g.setColor(color);
+			g.fillOval(0, 0, getSize().width, getSize().height);
+		}
 	}
 
 }
