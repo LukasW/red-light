@@ -210,12 +210,14 @@
 							<url>scp://${server.name}/home/pi</url>
 							<commands>
 								<command><![CDATA[[ -f /etc/init.d/${project.artifactId} ] && sudo service ${project.artifactId} stop]]></command>
+								<command><![CDATA[[ -f /etc/init.d/${project.artifactId} ] && sudo update-rc.d -f ${project.artifactId} remove]]></command>
 								<command>sudo rm -f /opt/${project.artifactId}/log/*</command>
 								<command>sudo rm -f /opt/${project.artifactId}/err/*</command>
 								<command>sudo mkdir -p /opt/${project.artifactId}</command>
 								<command><![CDATA[sudo tar --overwrite --no-same-owner -xzf ${project.artifactId}.tar.gz -C /opt/${project.artifactId}]]></command>
 								<command>rm ${project.artifactId}.tar.gz</command>
 								<command><![CDATA[[ -f /etc/init.d/${project.artifactId} ] || sudo ln -s /opt/${project.artifactId}/bin/${project.artifactId}.sh /etc/init.d/${project.artifactId}]]></command>
+								<command>sudo update-rc.d ${project.artifactId} defaults</command>
 								<command>sudo systemctl daemon-reload</command>
 								<command>sudo service ${project.artifactId} start</command>
 							</commands>
