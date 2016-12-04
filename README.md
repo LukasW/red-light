@@ -1,13 +1,12 @@
-# red-light
+# Red Light
 
 ## Part List
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| Description | Conrad PartNr | Price (in CHF) |
+| --- | --- | --- |
+| Raspberry Pi Model A+ 256 MB ohne Betriebssystem | 1299810 - 62 | 29.95 |
+| LED bedrahtet Rot Rund 5 mm 5500 mcd 4 ° 20 mA 1.9 V Vishay TLHK 5800 | 184350 - 62 | 0.45 |
 
-
-
+![alt text](https://github.com/LukasW/red-light/raw/master/red-light.png "First schematics")
 
 ## Software Installation on Raspberry
 
