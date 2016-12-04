@@ -1,8 +1,10 @@
 # red-light
 
 ## Part List
-|Part|Conrad|Price|
-|LED|123|12.23Fr|
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
 
 
 
