@@ -47,5 +47,14 @@ Configure settings.xml
 </server>
 ```
     
+## Running
+Turning light on
+> http://your-ip:8080/light/api/control/on
+
+Turning light off
+> http://your-ip:8080/light/api/control/off
+
+Running locally without pi: Use the ch.smaug.redlight.MockedRedLightRunner class
+
 ## Links
 http://pi4j.com/pins/model-a-plus.html
