@@ -5,7 +5,8 @@
 | --- | --- | --- |
 | Raspberry Pi Model A+ 256 MB ohne Betriebssystem | 1299810 - 62 | 29.95 |
 | Raspberry Pi® WLAN-Stick EDIMAX EW-7811Un | 993655 - 62 | 9.95 |
-| LED bedrahtet Rot Rund 5 mm 5500 mcd 4 ° 20 mA 1.9 V Vishay TLHK 5800 | 184350 - 62 | 0.45 |
+| LED-Reflektor Chrom | 170206-62 | 3.20 |
+| HighPower-LED Rot 75 lm 125 ° 2.9 V 700 mA Luxeon Lumileds LXML-PD01-0040 | 170202-62 | 2.45 |
 | microSDHC-Karte 16 GB | 284241 - 62 | 10.95 |
 | USB-Ladegerät Steckdose 1200 mA 1 x Micro-USB | 514691 - 62 | 8.95 |
 
