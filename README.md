@@ -23,6 +23,8 @@ Configure network (/etc/network/interfaces)
 > wpa-ssid "your-ssid"
 > wpa-psk "your-password"
 
+http://www.datenreise.de/raspberry-pi-wlan-einrichten-edimax/
+
 Setup raspberry with raspi-config
 
 Install [Apache Commons Daemon](http://commons.apache.org/proper/commons-daemon/jsvc.html)
@@ -59,3 +61,4 @@ Running locally without pi: Use the ch.smaug.redlight.MockedRedLightRunner class
 
 ## Links
 http://pi4j.com/pins/model-a-plus.html
+http://www.datenreise.de/raspberry-pi-wlan-einrichten-edimax/
